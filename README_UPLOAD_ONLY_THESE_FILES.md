@@ -1,1 +1,9 @@
-Upload these extracted files to the GitHub repo root after deleting prior dashboard files. This is v11 with full CBD inventory, Market AI reports, West Market debt/risk table, CoStar profile enrichment, and historical comps.
+# Greater Philadelphia Office CBD Dashboard v11.1 map/photo fix
+
+Upload only the extracted files in this folder to the GitHub repository root:
+- index.html
+- dashboard.html
+- .nojekyll
+- README_UPLOAD_ONLY_THESE_FILES.md
+
+Delete older dashboard files before uploading.
