@@ -1,9 +1,1 @@
-# Greater Philadelphia Office CBD Dashboard v7.1 Embedded Visual Fix
-
-Upload only these extracted files to the GitHub repository root:
-
-- index.html
-- dashboard.html
-- .nojekyll
-
-This package is fully self-contained. There is no assets folder, no external data files, and no required image path. Delete prior dashboard files before uploading this version.
+Upload only index.html, dashboard.html, and .nojekyll to the GitHub Pages repo root. Delete older files first. v7.2 removes visible marker dots, uses invisible building hotspots on top of the visual CBD map, and adds simple pan/zoom interaction.
