@@ -69,9 +69,9 @@ html,body{overflow:auto;}
 </head>
 <body>
 <div class="app">
-<header class="header"><div class="brand"><div class="logo">savills</div><div class="title"><h1>Greater Philadelphia</h1><div class="sub">Office Market Intelligence</div><div class="meta">CBD prototype • Building, tenant stack and historical activity model</div></div></div><nav class="nav"><span>Market overview</span><span class="active">Buildings</span><span>Tenants</span><span>Leases</span><span>Market AI</span></nav><div class="actions"><div class="pill">v10.4 inventory-colored map</div><div class="pill">Share</div></div></header>
+<header class="header"><div class="brand"><div class="logo">savills</div><div class="title"><h1>Greater Philadelphia</h1><div class="sub">Office Market Intelligence</div><div class="meta">CBD prototype • Building, tenant stack and historical activity model</div></div></div><nav class="nav"><span>Market overview</span><span class="active">Buildings</span><span>Tenants</span><span>Leases</span><span>Market AI</span></nav><div class="actions"><div class="pill">v10.5 inventory emphasis</div><div class="pill">Share</div></div></header>
 <section class="filters"><div class="field"><label>Search buildings</label><input id="search" placeholder="Building name, address, or owner..."></div><div class="field"><label>Submarket</label><select id="submarket"><option>Center City CBD</option></select></div><div class="field"><label>Class</label><select id="classFilter"><option value="">All classes</option><option>Trophy</option><option>Class A</option><option>Class B</option></select></div><div class="field"><label>Owner / landlord</label><select id="ownerFilter"><option value="">All owners</option><option>1211 Chestnut Realty Corp</option><option>1429 Walnut Associates Lp</option><option>1518 Associates LP</option><option>211 N 13th Street Associa</option><option>AION Partners</option><option>APF Properties</option><option>ASI Management</option><option>Academic Properties, Inc.</option><option>Accesso Partners</option><option>Acore Capital</option><option>AllanDombRealEstate</option><option>American Real Estate Partners (AREP)</option><option>Artwen Associates</option><option>Bedrock Group LLC</option><option>Blackstone Group</option><option>Board of Directors of City Trusts</option><option>Brandywine Realty Trust</option><option>CSB Holdings</option><option>Coretrust Management, Inc.</option><option>Crown Properties, Inc.</option><option>Equivest Management, Inc.</option><option>Four Penn Center Owner LLC</option><option>Giller Realty</option><option>Healthpeak Properties, Inc.</option><option>InterVest Capital Partners</option><option>James J Gupko</option><option>KKR &amp; Co. Inc.</option><option>Leser Realty</option><option>Metropolis</option><option>Miller Investment Management</option><option>National Real Estate Advisors</option><option>Nightingale Properties</option><option>Oaktree Capital Management, L.P.</option><option>PMC Property Group</option><option>Pomegranate Real Estate</option><option>RMPKey, LLC</option><option>Realex Capital Corp.</option><option>Rhombus Properties</option><option>SSH Real Estate</option><option>Science Center</option><option>Shorenstein Properties</option><option>Silverstein Properties</option><option>Southeastern Pennsylvania Transportation Authority</option><option>TF Cornerstone, Inc.</option><option>The Macerich Company</option><option>University Place Associates</option><option>Ventas, Inc.</option><option>Wafra, Inc.</option><option>Zurich Alternative Asset Management</option></select></div><div class="field"><label>Availability</label><select id="availFilter"><option value="">All</option><option value="high">High availability</option><option value="low">Low availability</option></select></div><div class="field"><label>Comp activity</label><select id="compFilter"><option value="">All</option><option value="recent">Recent comp activity</option><option value="any">Any comp activity</option></select></div><button class="ghost" id="resetBtn">↻ Reset filters</button><button id="fitBtn">⊙ Fit map</button></section>
-<main class="main"><div class="mapwrap"><div id="map"></div><div class="map-vignette"></div><div class="legend"><div class="yl"><span class="dot"></span>Trophy</div><div class="tl"><span class="dot"></span>Class A</div><div class="bl"><span class="dot"></span>Class B</div></div><div class="tools"><div class="tool">➤</div><div class="tool">▰</div><div class="tool">▤</div><div class="tool">✦</div><div class="tool">⛶</div></div><div class="compass"><div class="tri">▲</div><div>N</div></div><div class="map-note"><b>Real Cesium 3D map:</b> real city tiles plus Savills inventory-colored building shells. Filters are driven by our CBD inventory so Trophy/Class A/Class B assets do not disappear when Cesium metadata is incomplete.</div><div class="map-mode"><button id="btn3d" class="active">3D</button><button id="btn2d">2D</button><button>Q2 2026⌄</button></div><div class="map-style"><button class="active" data-overlay="class">Class</button><button data-overlay="activity">Activity</button><button data-overlay="availability">Availability</button><button data-overlay="owner">Owner</button></div></div><aside class="profile"><div class="profile-card" id="profile"></div></aside></main>
+<main class="main"><div class="mapwrap"><div id="map"></div><div class="map-vignette"></div><div class="legend"><div class="yl"><span class="dot"></span>Trophy</div><div class="tl"><span class="dot"></span>Class A</div><div class="bl"><span class="dot"></span>Class B</div></div><div class="tools"><div class="tool">➤</div><div class="tool">▰</div><div class="tool">▤</div><div class="tool">✦</div><div class="tool">⛶</div></div><div class="compass"><div class="tri">▲</div><div>N</div></div><div class="map-note"><b>Real Cesium 3D map:</b> tracked Savills CBD buildings are emphasized as the primary clickable layer; surrounding city buildings remain as subdued context.</div><div class="map-mode"><button id="btn3d" class="active">3D</button><button id="btn2d">2D</button><button>Q2 2026⌄</button></div><div class="map-style"><button class="active" data-overlay="class">Class</button><button data-overlay="activity">Activity</button><button data-overlay="availability">Availability</button><button data-overlay="owner">Owner</button></div></div><aside class="profile"><div class="profile-card" id="profile"></div></aside></main>
 
 <section class="intel" id="intelWorkspace">
   <div class="intel-head">
@@ -135,7 +135,7 @@ function footprintDimensions(b){
  const d=Math.max(18,Math.min(68,side*1.10));
  return {w,d};
 }
-function shellAlpha(b){return b.id===selected?.id ? 0.68 : 0.38;}
+function shellAlpha(b){return b.id===selected?.id ? 0.90 : 0.70;}
 function setProfile(b){selected=b; document.getElementById('profile').innerHTML=profileHTML(b); updateSelectedLayer(); renderIntelligence();}
 async function initMap(){
  try{
@@ -198,12 +198,12 @@ function applyOsmBuildingStyle(){
    if(!visibleIds.has(b.id)) return;
    const condition=styleConditionForBuilding(b);
    if(!condition) return;
-   const alpha=b.id===selected?.id?0.92:0.72;
+   const alpha=b.id===selected?.id?0.88:0.62;
    conds.push([condition, `color('${overlayColor(b)}', ${alpha})`]);
  });
- conds.push(['true', "color('#101927', 0.48)"]);
+ conds.push(['true', "color('#050b16', 0.20)"]);
  try{osmTileset.style=new Cesium.Cesium3DTileStyle({color:{conditions:conds},show:true});}
- catch(e){console.warn('Unable to apply OSM building style',e); osmTileset.style=new Cesium.Cesium3DTileStyle({color:"color('#101927', 0.48)",show:true});}
+ catch(e){console.warn('Unable to apply OSM building style',e); osmTileset.style=new Cesium.Cesium3DTileStyle({color:"color('#050b16', 0.20)",show:true});}
 }
 function tileText(picked){
  if(!picked||typeof picked.getProperty!=='function')return '';
@@ -224,8 +224,9 @@ function matchPickedTileFeatureToBuilding(picked){
 function buildInventoryEntities(){
  inventoryEntities.forEach(e=>viewer.entities.remove(e)); inventoryEntities=[];
  BUILDINGS.forEach(b=>{
-   const h=buildingHeight(b);
-   const dims=footprintDimensions(b);
+   const h=buildingHeight(b)*1.035;
+   const dims0=footprintDimensions(b);
+   const dims={w:dims0.w*1.14,d:dims0.d*1.14};
    const color=overlayColor(b);
    // Inventory-driven clickable building shell. This guarantees every Savills Trophy/Class A/Class B record can be highlighted,
    // even when Cesium/OSM tile metadata does not expose a clean building name match.
@@ -237,7 +238,7 @@ function buildInventoryEntities(){
        dimensions:new Cesium.Cartesian3(dims.w,dims.d,h),
        material:cesiumColor(color,shellAlpha(b)),
        outline:true,
-       outlineColor:cesiumColor(color,b.id===selected?.id?1:.78),
+       outlineColor:cesiumColor(color,b.id===selected?.id?1:.95),
        shadows:Cesium.ShadowMode.DISABLED,
        distanceDisplayCondition:new Cesium.DistanceDisplayCondition(0,6200)
      },
@@ -256,7 +257,7 @@ function updateBuildingsLayer(){
    if(b&&e.box){
      const color=overlayColor(b);
      e.box.material=cesiumColor(color,shellAlpha(b));
-     e.box.outlineColor=cesiumColor(color,b.id===selected?.id?1:.78);
+     e.box.outlineColor=cesiumColor(color,b.id===selected?.id?1:.95);
    }
  });
  applyOsmBuildingStyle();
@@ -281,7 +282,7 @@ function updateSelectedLayer(){
  inventoryEntities.forEach(e=>{
   const b=BUILDINGS.find(x=>x.id===e.buildingId);
   if(e.label)e.label.show=(e.buildingId===selected.id);
-  if(b&&e.box){const color=overlayColor(b); e.box.material=cesiumColor(color,shellAlpha(b)); e.box.outlineColor=cesiumColor(color,b.id===selected.id?1:.78);}
+  if(b&&e.box){const color=overlayColor(b); e.box.material=cesiumColor(color,shellAlpha(b)); e.box.outlineColor=cesiumColor(color,b.id===selected.id?1:.95);}
  });
  applyOsmBuildingStyle();
 }
