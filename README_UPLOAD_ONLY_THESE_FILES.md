@@ -1,1 +1,1 @@
-Upload only index.html, dashboard.html, and .nojekyll to the GitHub Pages repo root. Delete older files first. v7.2 removes visible marker dots, uses invisible building hotspots on top of the visual CBD map, and adds simple pan/zoom interaction.
+Upload only index.html, dashboard.html, and .nojekyll to the GitHub repository root. This v8 build uses a real interactive MapLibre 3D map with extruded CBD buildings; it requires internet access for the free OpenFreeMap basemap and MapLibre CDN.
