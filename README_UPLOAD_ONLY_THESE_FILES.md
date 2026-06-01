@@ -1,1 +1,1 @@
-Upload the extracted contents of this ZIP to the GitHub repository root. The dashboard is contained in index.html and dashboard.html. Do not upload old data_qa folders or CSV files.
+Upload the extracted contents of this folder to the GitHub Pages repository root. Do not upload the zip file itself. Files needed: index.html, dashboard.html, .nojekyll.
