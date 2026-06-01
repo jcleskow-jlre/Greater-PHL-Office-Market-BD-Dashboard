@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>Greater Philadelphia Office Market Intelligence - CBD v10.2 Cesium Polish</title>
+<title>Greater Philadelphia Office Market Intelligence - CBD v10.3 Cesium Map Debug</title>
 <link rel="preconnect" href="https://cesium.com">
 <link rel="preconnect" href="https://cdn.jsdelivr.net">
 <link href="https://cdn.jsdelivr.net/npm/cesium@1.120.0/Build/Cesium/Widgets/widgets.css" rel="stylesheet" />
@@ -61,13 +61,17 @@ html,body{overflow:auto;}
 .profile-card{min-height:100%;}
 @media(max-width:1100px){.app{grid-template-rows:auto auto 720px auto auto}.main{height:auto;min-height:720px}.mapwrap{height:720px}.profile{height:auto;max-height:none}.intel-body{height:360px}}
 
+
+/* v10.3 map debug fixes */
+.map-note{max-width:720px}
+.cesium-viewer .cesium-widget-credits{display:none!important}
 </style>
 </head>
 <body>
 <div class="app">
-<header class="header"><div class="brand"><div class="logo">savills</div><div class="title"><h1>Greater Philadelphia</h1><div class="sub">Office Market Intelligence</div><div class="meta">CBD prototype • Building, tenant stack and historical activity model</div></div></div><nav class="nav"><span>Market overview</span><span class="active">Buildings</span><span>Tenants</span><span>Leases</span><span>Market AI</span></nav><div class="actions"><div class="pill">v10.2 Cesium polish</div><div class="pill">Share</div></div></header>
+<header class="header"><div class="brand"><div class="logo">savills</div><div class="title"><h1>Greater Philadelphia</h1><div class="sub">Office Market Intelligence</div><div class="meta">CBD prototype • Building, tenant stack and historical activity model</div></div></div><nav class="nav"><span>Market overview</span><span class="active">Buildings</span><span>Tenants</span><span>Leases</span><span>Market AI</span></nav><div class="actions"><div class="pill">v10.3 Cesium map debug</div><div class="pill">Share</div></div></header>
 <section class="filters"><div class="field"><label>Search buildings</label><input id="search" placeholder="Building name, address, or owner..."></div><div class="field"><label>Submarket</label><select id="submarket"><option>Center City CBD</option></select></div><div class="field"><label>Class</label><select id="classFilter"><option value="">All classes</option><option>Trophy</option><option>Class A</option><option>Class B</option></select></div><div class="field"><label>Owner / landlord</label><select id="ownerFilter"><option value="">All owners</option><option>1211 Chestnut Realty Corp</option><option>1429 Walnut Associates Lp</option><option>1518 Associates LP</option><option>211 N 13th Street Associa</option><option>AION Partners</option><option>APF Properties</option><option>ASI Management</option><option>Academic Properties, Inc.</option><option>Accesso Partners</option><option>Acore Capital</option><option>AllanDombRealEstate</option><option>American Real Estate Partners (AREP)</option><option>Artwen Associates</option><option>Bedrock Group LLC</option><option>Blackstone Group</option><option>Board of Directors of City Trusts</option><option>Brandywine Realty Trust</option><option>CSB Holdings</option><option>Coretrust Management, Inc.</option><option>Crown Properties, Inc.</option><option>Equivest Management, Inc.</option><option>Four Penn Center Owner LLC</option><option>Giller Realty</option><option>Healthpeak Properties, Inc.</option><option>InterVest Capital Partners</option><option>James J Gupko</option><option>KKR &amp; Co. Inc.</option><option>Leser Realty</option><option>Metropolis</option><option>Miller Investment Management</option><option>National Real Estate Advisors</option><option>Nightingale Properties</option><option>Oaktree Capital Management, L.P.</option><option>PMC Property Group</option><option>Pomegranate Real Estate</option><option>RMPKey, LLC</option><option>Realex Capital Corp.</option><option>Rhombus Properties</option><option>SSH Real Estate</option><option>Science Center</option><option>Shorenstein Properties</option><option>Silverstein Properties</option><option>Southeastern Pennsylvania Transportation Authority</option><option>TF Cornerstone, Inc.</option><option>The Macerich Company</option><option>University Place Associates</option><option>Ventas, Inc.</option><option>Wafra, Inc.</option><option>Zurich Alternative Asset Management</option></select></div><div class="field"><label>Availability</label><select id="availFilter"><option value="">All</option><option value="high">High availability</option><option value="low">Low availability</option></select></div><div class="field"><label>Comp activity</label><select id="compFilter"><option value="">All</option><option value="recent">Recent comp activity</option><option value="any">Any comp activity</option></select></div><button class="ghost" id="resetBtn">↻ Reset filters</button><button id="fitBtn">⊙ Fit map</button></section>
-<main class="main"><div class="mapwrap"><div id="map"></div><div class="map-vignette"></div><div class="legend"><div class="yl"><span class="dot"></span>Trophy</div><div class="tl"><span class="dot"></span>Class A</div><div class="bl"><span class="dot"></span>Class B</div></div><div class="tools"><div class="tool">➤</div><div class="tool">▰</div><div class="tool">▤</div><div class="tool">✦</div><div class="tool">⛶</div></div><div class="compass"><div class="tri">▲</div><div>N</div></div><div class="map-note"><b>Polished Cesium 3D map:</b> pan, zoom and rotate. Subtle class beacons select buildings; tables below mirror filters and selected profile.</div><div class="map-mode"><button id="btn3d" class="active">3D</button><button id="btn2d">2D</button><button>Q2 2026⌄</button></div><div class="map-style"><button class="active" data-overlay="class">Class</button><button data-overlay="activity">Activity</button><button data-overlay="availability">Availability</button><button data-overlay="owner">Owner</button></div></div><aside class="profile"><div class="profile-card" id="profile"></div></aside></main>
+<main class="main"><div class="mapwrap"><div id="map"></div><div class="map-vignette"></div><div class="legend"><div class="yl"><span class="dot"></span>Trophy</div><div class="tl"><span class="dot"></span>Class A</div><div class="bl"><span class="dot"></span>Class B</div></div><div class="tools"><div class="tool">➤</div><div class="tool">▰</div><div class="tool">▤</div><div class="tool">✦</div><div class="tool">⛶</div></div><div class="compass"><div class="tri">▲</div><div>N</div></div><div class="map-note"><b>Real Cesium 3D map:</b> pan, zoom and rotate. Colored real building tiles are used where Cesium/OSM exposes a building name match; invisible hotspots support building selection without cluttering the map.</div><div class="map-mode"><button id="btn3d" class="active">3D</button><button id="btn2d">2D</button><button>Q2 2026⌄</button></div><div class="map-style"><button class="active" data-overlay="class">Class</button><button data-overlay="activity">Activity</button><button data-overlay="availability">Availability</button><button data-overlay="owner">Owner</button></div></div><aside class="profile"><div class="profile-card" id="profile"></div></aside></main>
 
 <section class="intel" id="intelWorkspace">
   <div class="intel-head">
@@ -127,22 +131,23 @@ async function initMap(){
  try{
  Cesium.Ion.defaultAccessToken=CESIUM_ION_TOKEN;
  const terrainProvider = await Cesium.createWorldTerrainAsync().catch(()=>undefined);
- viewer=new Cesium.Viewer('map',{animation:false,timeline:false,geocoder:false,homeButton:false,sceneModePicker:false,baseLayerPicker:true,navigationHelpButton:false,selectionIndicator:false,infoBox:false,fullscreenButton:false,terrainProvider});
+ viewer=new Cesium.Viewer('map',{animation:false,timeline:false,geocoder:false,homeButton:false,sceneModePicker:false,baseLayerPicker:false,navigationHelpButton:false,selectionIndicator:false,infoBox:false,fullscreenButton:false,terrainProvider,requestRenderMode:false});
  const scene=viewer.scene;
  scene.globe.enableLighting=true;
  scene.globe.depthTestAgainstTerrain=false;
  scene.backgroundColor=Cesium.Color.fromCssColorString('#030711');
  scene.skyAtmosphere.show=true;
  scene.fog.enabled=true;
- scene.fog.density=0.00012;
- scene.screenSpaceCameraController.minimumZoomDistance=260;
- scene.screenSpaceCameraController.maximumZoomDistance=7000;
+ scene.fog.density=0.00009;
+ scene.screenSpaceCameraController.minimumZoomDistance=85;
+ scene.screenSpaceCameraController.maximumZoomDistance=9000;
+ scene.screenSpaceCameraController.enableCollisionDetection=false;
  try{
    osmTileset=await Cesium.createOsmBuildingsAsync();
-   osmTileset.style=new Cesium.Cesium3DTileStyle({color:"color('#1b2532', 0.48)",show:true});
    viewer.scene.primitives.add(osmTileset);
+   applyOsmBuildingStyle();
  }catch(e){console.warn('Cesium OSM Buildings unavailable',e);}
- // Optional high-end photorealistic tile test. If the token/account does not allow it, the dashboard stays on OSM Buildings.
+ // Optional photorealistic tile test. If unavailable, OSM buildings remain active.
  try{
    photoTileset=await Cesium.Cesium3DTileset.fromIonAssetId(2275207);
    photoTileset.show=false;
@@ -151,23 +156,71 @@ async function initMap(){
  buildInventoryEntities();
  viewer.screenSpaceEventHandler.setInputAction(function(click){
    const picked=viewer.scene.pick(click.position);
-   if(picked && picked.id && picked.id.buildingId){const b=BUILDINGS.find(x=>x.id===picked.id.buildingId); if(b){setProfile(b); flyToBuilding(b);}}
+   let b=null;
+   if(picked && picked.id && picked.id.buildingId){b=BUILDINGS.find(x=>x.id===picked.id.buildingId);}
+   if(!b){b=matchPickedTileFeatureToBuilding(picked);}
+   if(b){setProfile(b); flyToBuilding(b);}
  },Cesium.ScreenSpaceEventType.LEFT_CLICK);
+ viewer.screenSpaceEventHandler.setInputAction(function(movement){
+   const picked=viewer.scene.pick(movement.endPosition);
+   const b=(picked&&picked.id&&picked.id.buildingId)?BUILDINGS.find(x=>x.id===picked.id.buildingId):matchPickedTileFeatureToBuilding(picked);
+   viewer.container.style.cursor=b?'pointer':'';
+ },Cesium.ScreenSpaceEventType.MOUSE_MOVE);
  setProfile(selected); fitMap(); renderRows();
  }catch(err){ console.error("Cesium map initialization failed", err); const map=document.getElementById("map"); if(map){map.innerHTML=`<div class="map-error"><b>Cesium map failed to initialize.</b><br>This usually means the Cesium script, token, or ion 3D tile layer did not load from GitHub Pages. The dashboard data/tables still work below. Error: ${String(err&&err.message?err.message:err)}</div>`;} setProfile(selected); renderRows(); }
+}
+function safeStyleString(s){return String(s||'').replace(/\\/g,'\\\\').replace(/'/g,"\\'");}
+function candidateNames(b){
+ const raw=[b.name];
+ if((b.name||'').endsWith(' Building')) raw.push(b.name.replace(/ Building$/,''));
+ if((b.name||'').startsWith('The ')) raw.push(b.name.replace(/^The /,''));
+ return [...new Set(raw.filter(Boolean).map(x=>String(x).trim()).filter(x=>x.length>2))].slice(0,4);
+}
+function styleConditionForBuilding(b){
+ const parts=candidateNames(b).map(n=>`(${'${name}'} === '${safeStyleString(n)}')`);
+ return parts.length?parts.join(' || '):null;
+}
+function applyOsmBuildingStyle(){
+ if(!osmTileset||!window.Cesium)return;
+ const conds=[];
+ const visibleIds=new Set((filtered&&filtered.length?filtered:BUILDINGS).map(b=>b.id));
+ BUILDINGS.forEach(b=>{
+   if(!visibleIds.has(b.id)) return;
+   const condition=styleConditionForBuilding(b);
+   if(!condition) return;
+   const alpha=b.id===selected?.id?0.92:0.72;
+   conds.push([condition, `color('${overlayColor(b)}', ${alpha})`]);
+ });
+ conds.push(['true', "color('#101927', 0.48)"]);
+ try{osmTileset.style=new Cesium.Cesium3DTileStyle({color:{conditions:conds},show:true});}
+ catch(e){console.warn('Unable to apply OSM building style',e); osmTileset.style=new Cesium.Cesium3DTileStyle({color:"color('#101927', 0.48)",show:true});}
+}
+function tileText(picked){
+ if(!picked||typeof picked.getProperty!=='function')return '';
+ const props=['name','building','addr:housenumber','addr:street','addr:unit','elementId'];
+ const vals=[];
+ props.forEach(k=>{try{const v=picked.getProperty(k); if(v) vals.push(String(v));}catch(e){}});
+ return vals.join(' ').toLowerCase();
+}
+function matchPickedTileFeatureToBuilding(picked){
+ const txt=tileText(picked); if(!txt)return null;
+ const norm=s=>String(s||'').toLowerCase().replace(/[^a-z0-9]+/g,' ').trim();
+ const nt=norm(txt);
+ return BUILDINGS.find(b=>{
+   const nn=norm(b.name); const ad=norm(b.address);
+   return (nn&&nt.includes(nn)) || (ad&&nt.includes(ad)) || (nn&&nn.includes(nt)&&nt.length>6);
+ })||null;
 }
 function buildInventoryEntities(){
  inventoryEntities.forEach(e=>viewer.entities.remove(e)); inventoryEntities=[];
  BUILDINGS.forEach(b=>{
-   const color=cesiumColor(overlayColor(b), .72);
-   const h=Math.max(35, Math.min(150, (Number(b.stories)||18)*2.4));
+   // Invisible click/hover hotspot. The map visual should come from real Cesium building tiles, not visible dots.
    const e=viewer.entities.add({
      name:b.name,
      buildingId:b.id,
-     position:Cesium.Cartesian3.fromDegrees(b.lon,b.lat,h),
-     point:{pixelSize:(b.class==='Trophy'?9:7),color:color,outlineColor:Cesium.Color.fromCssColorString('#071321').withAlpha(.9),outlineWidth:2,disableDepthTestDistance:5000,distanceDisplayCondition:new Cesium.DistanceDisplayCondition(0,5000)},
-     label:{text:b.name,font:'700 12px Inter, Arial',fillColor:Cesium.Color.WHITE,show:false,showBackground:true,backgroundColor:Cesium.Color.fromCssColorString('#071321').withAlpha(.88),pixelOffset:new Cesium.Cartesian2(0,-22),distanceDisplayCondition:new Cesium.DistanceDisplayCondition(0,900)},
-     billboard:{show:false}
+     position:Cesium.Cartesian3.fromDegrees(b.lon,b.lat,18),
+     point:{pixelSize:26,color:Cesium.Color.fromCssColorString(overlayColor(b)).withAlpha(0.01),outlineWidth:0,disableDepthTestDistance:Number.POSITIVE_INFINITY,distanceDisplayCondition:new Cesium.DistanceDisplayCondition(0,3500)},
+     label:{text:b.name,font:'700 12px Inter, Arial',fillColor:Cesium.Color.WHITE,show:false,showBackground:true,backgroundColor:Cesium.Color.fromCssColorString('#071321').withAlpha(.9),pixelOffset:new Cesium.Cartesian2(0,-22),disableDepthTestDistance:Number.POSITIVE_INFINITY,distanceDisplayCondition:new Cesium.DistanceDisplayCondition(0,1400)}
    });
    inventoryEntities.push(e);
  });
@@ -175,44 +228,50 @@ function buildInventoryEntities(){
 }
 function updateBuildingsLayer(){
  const visibleIds=new Set(filtered.map(b=>b.id));
- inventoryEntities.forEach(e=>{
-   const b=BUILDINGS.find(x=>x.id===e.buildingId); const isVisible=visibleIds.has(e.buildingId); e.show=isVisible;
-   if(b && e.point){const col=overlayColor(b); e.point.color=cesiumColor(col,.72); e.point.pixelSize=(b.class==='Trophy'?9:7);}
- });
+ inventoryEntities.forEach(e=>{e.show=visibleIds.has(e.buildingId);});
+ applyOsmBuildingStyle();
  updateSelectedLayer();
 }
 function updateSelectedLayer(){
  if(!viewer||!selected)return;
  if(selectedRing)viewer.entities.remove(selectedRing); if(selectedLabel)viewer.entities.remove(selectedLabel);
- const col=overlayColor(selected);
- const h=Math.max(85,Math.min(230,(selected.stories||28)*3.2));
+ const h=Math.max(70,Math.min(250,(selected.stories||28)*3.4));
  selectedRing=viewer.entities.add({
    name:selected.name+' selected highlight', buildingId:selected.id,
-   position:Cesium.Cartesian3.fromDegrees(selected.lon,selected.lat,18),
-   ellipse:{semiMajorAxis:28,semiMinorAxis:28,material:Cesium.Color.fromCssColorString('#ffdf00').withAlpha(.18),outline:true,outlineColor:Cesium.Color.fromCssColorString('#fff3a0'),height:18,classificationType:Cesium.ClassificationType.BOTH},
-   polyline:{positions:Cesium.Cartesian3.fromDegreesArrayHeights([selected.lon,selected.lat,20, selected.lon,selected.lat,h]),width:2,material:Cesium.Color.fromCssColorString('#ffdf00')}
+   position:Cesium.Cartesian3.fromDegrees(selected.lon,selected.lat,8),
+   ellipse:{semiMajorAxis:34,semiMinorAxis:34,material:Cesium.Color.fromCssColorString('#ffdf00').withAlpha(.13),outline:true,outlineColor:Cesium.Color.fromCssColorString('#ffef73').withAlpha(.95),height:8,classificationType:Cesium.ClassificationType.BOTH},
+   polyline:{positions:Cesium.Cartesian3.fromDegreesArrayHeights([selected.lon,selected.lat,22, selected.lon,selected.lat,h]),width:2,material:Cesium.Color.fromCssColorString('#ffdf00')}
  });
  selectedLabel=viewer.entities.add({
    name:selected.name+' label', buildingId:selected.id,
-   position:Cesium.Cartesian3.fromDegrees(selected.lon,selected.lat,h+8),
-   label:{text:selected.name,font:'800 13px Inter, Arial',fillColor:Cesium.Color.WHITE,showBackground:true,backgroundColor:Cesium.Color.fromCssColorString('#071321').withAlpha(.92),pixelOffset:new Cesium.Cartesian2(0,-10),verticalOrigin:Cesium.VerticalOrigin.BOTTOM,disableDepthTestDistance:5000},
-   point:{pixelSize:9,color:Cesium.Color.fromCssColorString('#ffdf00'),outlineColor:Cesium.Color.WHITE,outlineWidth:2,disableDepthTestDistance:5000}
+   position:Cesium.Cartesian3.fromDegrees(selected.lon,selected.lat,h+12),
+   label:{text:selected.name,font:'800 13px Inter, Arial',fillColor:Cesium.Color.WHITE,showBackground:true,backgroundColor:Cesium.Color.fromCssColorString('#071321').withAlpha(.94),pixelOffset:new Cesium.Cartesian2(0,-8),verticalOrigin:Cesium.VerticalOrigin.BOTTOM,disableDepthTestDistance:Number.POSITIVE_INFINITY},
+   point:{pixelSize:8,color:Cesium.Color.fromCssColorString('#ffdf00'),outlineColor:Cesium.Color.WHITE,outlineWidth:2,disableDepthTestDistance:Number.POSITIVE_INFINITY}
  });
  inventoryEntities.forEach(e=>{if(e.label)e.label.show=(e.buildingId===selected.id);});
+ applyOsmBuildingStyle();
 }
 function updateLabel(){updateSelectedLayer();}
 function flyToBuilding(b){
- if(!viewer)return; setProfile(b);
- const destination=Cesium.Cartesian3.fromDegrees(b.lon-0.0045,b.lat-0.0032,980);
- viewer.camera.flyTo({destination,orientation:{heading:Cesium.Math.toRadians(47),pitch:Cesium.Math.toRadians(-31),roll:0},duration:.9});
+ if(!viewer||!b)return; setProfile(b);
+ const center=Cesium.Cartesian3.fromDegrees(b.lon,b.lat,Math.max(80,Math.min(180,(b.stories||24)*2.1)));
+ const radius=Math.max(140,Math.min(420,Math.sqrt((b.rba||250000))/1.3));
+ const offset=new Cesium.HeadingPitchRange(Cesium.Math.toRadians(46),Cesium.Math.toRadians(-34),radius*2.4);
+ viewer.camera.flyToBoundingSphere(new Cesium.BoundingSphere(center,radius),{offset,duration:.95,complete:function(){viewer.camera.lookAtTransform(Cesium.Matrix4.IDENTITY);}});
 }
 function fitMap(){
  if(!viewer)return;
  const target=filtered.length?filtered:BUILDINGS;
- let lon=0,lat=0; target.forEach(b=>{lon+=b.lon;lat+=b.lat}); lon/=target.length; lat/=target.length;
- viewer.camera.flyTo({destination:Cesium.Cartesian3.fromDegrees(lon-0.012,lat-0.009,2250),orientation:{heading:Cesium.Math.toRadians(48),pitch:Cesium.Math.toRadians(-34),roll:0},duration:1.0});
+ let lon=0,lat=0,minLon=999,maxLon=-999,minLat=999,maxLat=-999;
+ target.forEach(b=>{lon+=b.lon;lat+=b.lat;minLon=Math.min(minLon,b.lon);maxLon=Math.max(maxLon,b.lon);minLat=Math.min(minLat,b.lat);maxLat=Math.max(maxLat,b.lat);}); lon/=target.length; lat/=target.length;
+ const lonMeters=(maxLon-minLon)*85000; const latMeters=(maxLat-minLat)*111000; const span=Math.max(lonMeters,latMeters,900);
+ const range=Math.max(1500,Math.min(4600,span*1.25));
+ const center=Cesium.Cartesian3.fromDegrees(lon,lat,150);
+ const offset=new Cesium.HeadingPitchRange(Cesium.Math.toRadians(42),Cesium.Math.toRadians(-38),range);
+ viewer.camera.flyToBoundingSphere(new Cesium.BoundingSphere(center,Math.max(550,span*.35)),{offset,duration:1.0,complete:function(){viewer.camera.lookAtTransform(Cesium.Matrix4.IDENTITY);}});
 }
-function set2DView(){if(!viewer)return; viewer.camera.flyTo({destination:Cesium.Cartesian3.fromDegrees(-75.164,39.952,5200),orientation:{heading:0,pitch:Cesium.Math.toRadians(-89),roll:0},duration:.8});}
+function set2DView(){if(!viewer)return; viewer.camera.flyTo({destination:Cesium.Cartesian3.fromDegrees(-75.164,39.952,5100),orientation:{heading:0,pitch:Cesium.Math.toRadians(-89),roll:0},duration:.8});}
+
 function applyFilters(){const q=document.getElementById('search').value.toLowerCase().trim(); const c=document.getElementById('classFilter').value; const o=document.getElementById('ownerFilter').value; const av=document.getElementById('availFilter').value; const comp=document.getElementById('compFilter').value; filtered=BUILDINGS.filter(b=>{ const hay=(b.name+' '+b.address+' '+(b.owner||'')).toLowerCase(); const ap=b.available&&b.rba?b.available/b.rba*100:null; return (!q||hay.includes(q))&&(!c||b.class===c)&&(!o||b.owner===o)&&(!av||(av==='high'?ap>=20:ap<20))&&(!comp||(comp==='recent'?b.last_comp_year>=2022:b.comp_count>0)); }); document.getElementById('mBuildings').textContent=filtered.length; updateBuildingsLayer(); renderRows(); if(filtered.length&&!filtered.find(b=>b.id===selected.id))setProfile(filtered[0]);}
 let activeIntelTab='buildings', intelSearch='', sortKey=null, sortDir=1;
 function renderRows(){renderIntelligence();}
