@@ -1,0 +1,32 @@
+import { state } from './state.js';
+import { slugClass, sf, escapeHtml, clean } from './utils.js';
+let map, markerMap=new Map();
+const styleUrl='https://tiles.openfreemap.org/styles/dark';
+export function initMap(center, onSelect){
+  if(map){ try{ map.remove(); }catch(e){} map=null; }
+  map = new maplibregl.Map({container:'map',style:styleUrl,center:[center.longitude,center.latitude],zoom:13.45,pitch:52,bearing:-18,attributionControl:true});
+  map.addControl(new maplibregl.NavigationControl({visualizePitch:true}),'top-right');
+  map.on('load',()=>{
+    try{
+      const layers=map.getStyle().layers||[]; const labelLayer=layers.find(l=>l.type==='symbol'&&l.layout&&l.layout['text-field']);
+      map.addSource('phl-cbd-buildings-geojson',{type:'geojson',data:{type:'FeatureCollection',features:[]}});
+      map.addLayer({id:'phl-cbd-building-points',type:'circle',source:'phl-cbd-buildings-geojson',paint:{'circle-radius':['case',['==',['get','selected'],true],9,6],'circle-color':['match',['get','building_class'],'Trophy','#FFDF00','Class A','#238291','Class B','#7c89a6','#FFDF00'],'circle-stroke-color':'rgba(255,255,255,.68)','circle-stroke-width':1.4,'circle-opacity':.92}}, labelLayer?.id);
+      map.on('click','phl-cbd-building-points',e=>{const id=e.features[0].properties.building_id; onSelect(id); popup(e.features[0], e.lngLat);});
+      map.on('mouseenter','phl-cbd-building-points',()=>map.getCanvas().style.cursor='pointer');
+      map.on('mouseleave','phl-cbd-building-points',()=>map.getCanvas().style.cursor='');
+    }catch(e){console.warn('Map layer init issue',e)}
+  });
+}
+function popup(feature,lngLat){
+  const p=feature.properties;
+  new maplibregl.Popup({offset:12}).setLngLat(lngLat).setHTML(`<div class="popup-card"><div class="popup-title">${escapeHtml(p.display_name)}</div><div class="popup-sub">${escapeHtml(p.street_address)}</div><div class="popup-meta">${escapeHtml(p.building_class)} • ${sf(p.rba_sf)}<br>${escapeHtml(clean(p.owner_landlord))}</div></div>`).addTo(map);
+}
+export function updateMap(rows){
+  if(!map) return;
+  const fc={type:'FeatureCollection',features:rows.filter(b=>b.latitude&&b.longitude).map(b=>({type:'Feature',geometry:{type:'Point',coordinates:[b.longitude,b.latitude]},properties:{...b,selected:b.building_id===state.selectedBuildingId}}))};
+  if(map.getSource('phl-cbd-buildings-geojson')) map.getSource('phl-cbd-buildings-geojson').setData(fc);
+}
+export function flyToBuilding(b){ if(map&&b&&b.latitude&&b.longitude){ map.easeTo({center:[b.longitude,b.latitude],zoom:16.3,pitch:58,bearing:-20,duration:700}); } }
+export function fitRows(rows){
+  if(!map||!rows.length) return; const bounds=new maplibregl.LngLatBounds(); rows.forEach(b=>{if(b.latitude&&b.longitude) bounds.extend([b.longitude,b.latitude]);}); if(!bounds.isEmpty()) map.fitBounds(bounds,{padding:60,maxZoom:15,duration:650});
+}

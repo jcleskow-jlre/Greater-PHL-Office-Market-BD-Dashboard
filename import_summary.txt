@@ -1,0 +1,76 @@
+source,match_status,dashboard_building_id,dashboard_building,dashboard_address,costar_property_id,costar_property_name,costar_address
+CoStar,Exact address,PHL-CBD-0036,Duane Morris Plaza,30 S 17th St,300155,Duane Morris Plaza,30 S 17th St
+CoStar,Exact address,PHL-CBD-0012,PNC Bank Building,1600 Market St,300192,1600 Market,1600 Market St
+CoStar,Exact address,PHL-CBD-0076,North American Building,121 S Broad St,300287,North American Building,121 S Broad St
+CoStar,Exact address,PHL-CBD-0070,Land Title Building,100 S Broad St,300170,Land Title Building,100 S Broad St
+CoStar,Exact address,PHL-CBD-0099,8 Penn Center,1628 John F Kennedy Blvd,87724,8 Penn Center,1628 John F Kennedy Blvd
+CoStar,Exact address,PHL-CBD-0108,Belmont Building,211 N 13th St,300342,Belmont Building,211 N 13th St
+CoStar,Exact address,PHL-CBD-0043,Two Liberty Place,50 S 16th St,32851,Two Liberty Place,50 S 16th St
+CoStar,Exact address,PHL-CBD-0002,Two Logan Square,100 N 18th St,300258,Two Logan Square,100 N 18th St
+CoStar,Exact address,PHL-CBD-0069,100 N 20th St,100 N 20th St,300147,,100 N 20th St
+CoStar,Exact address,PHL-CBD-0124,801 Arch St,801 Arch St,300301,,801 Arch St
+CoStar,Exact address,PHL-CBD-0019,Three Logan Square,1717 Arch St,300256,Three Logan Square,1717 Arch St
+CoStar,Exact address,PHL-CBD-0078,Wells Fargo Building,123 S Broad St,87310,,123 S Broad St
+CoStar,Exact address,PHL-CBD-0110,230 S Broad St,230 S Broad St,300244,,230 S Broad St
+CoStar,Exact address,PHL-CBD-0071,1015 Chestnut St,1015 Chestnut St,300312,,1015 Chestnut St
+CoStar,Exact address,PHL-CBD-0088,Two Penn Center,1500 John F Kennedy Blvd,300178,Two Penn Center,1500 John F Kennedy Blvd
+CoStar,Exact address,PHL-CBD-0097,One Penn Center at Suburban Station,1617 John F Kennedy Blvd,300175,One Penn Center at Suburban Station,1617 John F Kennedy Blvd
+CoStar,Exact address,PHL-CBD-0103,1800 John F Kennedy Blvd,1800 John F Kennedy Blvd,87421,,1800 John F Kennedy Blvd
+CoStar,Exact address,PHL-CBD-0106,1880 John F Kennedy Blvd,1880 John F Kennedy Blvd,87676,,1880 John F Kennedy Blvd
+CoStar,Exact address,PHL-CBD-0098,The Stein Bellet Building,1624-1628 Locust St,300237,The Stein Bellet Building,1624-1628 Locust St
+CoStar,Exact address,PHL-CBD-0081,Septa Building,1234 Market St,300304,Septa Building,1234 Market St
+CoStar,Exact address,PHL-CBD-0102,1760 Market St,1760 Market St,87096,,1760 Market St
+CoStar,Exact address,PHL-CBD-0029,One Commerce Square,2005 Market St,300260,One Commerce Square,2005 Market St
+CoStar,Exact address,PHL-CBD-0133,3600 Market St,3600 Market St,32846,,3600 Market St
+CoStar,Exact address,PHL-CBD-0003,Wanamaker Building,100 Penn Sq E,95816,Wanamaker Building,100 Penn Sq E
+CoStar,Exact address,PHL-CBD-0089,1500 Spring Garden St,1500 Spring Garden St,301760,,1500 Spring Garden St
+CoStar,Exact address,PHL-CBD-0084,1420 Walnut St,1420 Walnut St,300231,,1420 Walnut St
+CoStar,Exact address,PHL-CBD-0085,1429-1433 Walnut St,1429-1433 Walnut St,300228,,1429-1433 Walnut St
+CoStar,Exact address,PHL-CBD-0090,1500-1506 Walnut St,1500-1506 Walnut St,300227,,1500-1506 Walnut St
+CoStar,Exact address,PHL-CBD-0093,1528 Walnut St,1528 Walnut St,300223,,1528 Walnut St
+CoStar,Exact address,PHL-CBD-0094,Medical Arts Building,1601 Walnut St,300275,Medical Arts Building,1601 Walnut St
+CoStar,Exact address,PHL-CBD-0096,1608-1614 Walnut St,1608-1614 Walnut St,300187,,1608-1614 Walnut St
+CoStar,Exact address,PHL-CBD-0051,25 N 38th St,25 N 38th St,9636849,One uCity,25 N 38th St
+CoStar,Exact address,PHL-CBD-0032,Cira Centre North,2929 Arch St,694938,Cira Centre North,2929 Arch St
+CoStar,Exact address,PHL-CBD-0046,Thomas Jefferson-Family Medicine,833 Chestnut St,300314,,833 Chestnut St
+CoStar,Exact address,PHL-CBD-0107,Rodin Place,2000 Hamilton St,300348,Rodin Place,2000 Hamilton St
+CoStar,Exact address,PHL-CBD-0005,1100 Ludlow St,1100 Ludlow St,300278,,1100 Ludlow St
+CoStar,Shared address - best name match,PHL-CBD-0008,Centre Square - West Tower,1500 Market St,300194,Centre Square- West Tower,1500 Market St
+CoStar,Exact address,PHL-CBD-0010,Three Penn Center,1515 Market St,300193,Three Penn Center,1515 Market St
+CoStar,Exact address,PHL-CBD-0013,Five Penn Center,1601 Market St,300189,Five Penn Center,1601 Market St
+CoStar,Exact address,PHL-CBD-0016,One Liberty Place,1650 Market St,300267,One Liberty Place,1650 Market St
+CoStar,Exact address,PHL-CBD-0017,1700 Market St,1700 Market St,300188,1700 Market Street,1700 Market St
+CoStar,Exact address,PHL-CBD-0020,1735 Market-BNY Mellon Center,1735 Market St,300259,1735 Market-BNY Mellon Center,1735 Market St
+CoStar,Exact address,PHL-CBD-0022,1818 Market St,1818 Market St,300183,1818 Market,1818 Market St
+CoStar,Exact address,PHL-CBD-0023,1835 Market St,1835 Market St,300182,1835 Market Street,1835 Market St
+CoStar,Exact address,PHL-CBD-0027,2000 Market St,2000 Market St,300181,2000 Market,2000 Market St
+CoStar,Exact address,PHL-CBD-0028,Two Commerce Square,2001 Market St,300261,Two Commerce Square,2001 Market St
+CoStar,Exact address,PHL-CBD-0040,3535 Market St,3535 Market St,300100,,3535 Market St
+CoStar,Exact address,PHL-CBD-0112,University City Science Center,3624 Market St,300099,University City Science Center,3624 Market St
+CoStar,Exact address,PHL-CBD-0048,uCity Square,3675 Market St,9636846,uCity Square,3675 Market St
+CoStar,Exact address,PHL-CBD-0042,University City Science Center,3711 Market St,506075,,3711 Market St
+CoStar,Exact address,PHL-CBD-0054,3.0 University Place,4101 Market St,9237586,3.0 University Place,4101 Market St
+CoStar,Exact address,PHL-CBD-0082,Sheridan Bldg,125 S 9th St,300332,Sheridan Bldg,125 S 9th St
+CoStar,Exact address,PHL-CBD-0037,The Graham Bldg,30-36 S 15th St,300138,The Graham Bldg,30-36 S 15th St
+CoStar,Exact address,PHL-CBD-0007,One Logan Square,130 N 18th St,300156,One Logan Square,130 N 18th St
+CoStar,Exact address,PHL-CBD-0068,One South Broad Street,1 S Broad St,300286,One South Broad Street,1 S Broad St
+CoStar,Exact address,PHL-CBD-0095,Three Parkway,1601 Cherry St,300164,Three Parkway,1601 Cherry St
+CoStar,Exact address,PHL-CBD-0077,1211 Chestnut St,1211 Chestnut St,300310,,1211 Chestnut St
+CoStar,Exact address,PHL-CBD-0100,1635 Market St,1635 Market St,300191,,1635 Market St
+CoStar,Exact address,PHL-CBD-0021,10 Penn Center,1801 Market St,300184,Ten Penn Center,1801 Market St
+CoStar,Exact address,PHL-CBD-0024,1900 Market St,1900 Market St,300139,1900 Market Street,1900 Market St
+CoStar,Exact address,PHL-CBD-0031,2401 Walnut St,2401 Walnut St,300241,2401 Walnut Street,2401 Walnut St
+CoStar,Exact address,PHL-CBD-0125,801 Market Street,20 N 8th St,1507482,801 Market Street,20 N 8th St
+CoStar,Exact address,PHL-CBD-0035,2.0 University Place,30 N 41st St,6968546,2.0 University Place,30 N 41st St
+CoStar,Exact address,PHL-CBD-0015,1650 Arch St,1650 Arch St,48092,1650 Arch,1650 Arch St
+CoStar,Exact address,PHL-CBD-0001,Widener Building,1339 Chestnut St,300306,Widener Building,1339 Chestnut St
+CoStar,Exact address,PHL-CBD-0062,The West Tower,3025 JFK,11811382,West Tower,3025 JFK
+CoStar,Exact address,PHL-CBD-0011,Four Penn Center,1600 John F Kennedy Blvd,300177,Four Penn Center,1600 John F Kennedy Blvd
+CoStar,Exact address,PHL-CBD-0126,907 Market St,907 Market St,641613,,907 Market St
+CoStar,Exact address,PHL-CBD-0006,Jefferson Tower,1101 Market St,85455,Jefferson Center,1101 Market St
+CoStar,Shared address - best name match,PHL-CBD-0009,Centre Square- East Tower,1500 Market St,899766,Centre Square- East Tower,1500 Market St
+CoStar,Exact address,PHL-CBD-0047,3020 Market St,3020 Market St,302031,,3020 Market St
+CoStar,Exact address,PHL-CBD-0129,3101 Market St,3101 Market St,7231178,,3101 Market St
+CoStar,Exact address,PHL-CBD-0058,3151 Market St,3151 Market St,11567011,,3151 Market St
+CoStar,Exact address,PHL-CBD-0105,1845 Walnut St,1845 Walnut St,300219,,1845 Walnut St
+CoStar,Exact address,PHL-CBD-0033,FMC Tower at Cira Centre South,2929 Walnut St,6357904,FMC Tower at Cira Centre South,2929 Walnut St
