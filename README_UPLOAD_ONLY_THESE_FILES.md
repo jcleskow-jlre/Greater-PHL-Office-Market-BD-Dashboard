@@ -1,7 +1,3 @@
-Upload only these extracted files to the GitHub repository root:
-- index.html
-- dashboard.html
-- .nojekyll
-- README_UPLOAD_ONLY_THESE_FILES.md
+# Upload only these files
 
-Delete older dashboard files before uploading this version.
+Upload `index.html`, `dashboard.html`, `.nojekyll`, and this README to the GitHub Pages repo root after deleting prior package files.
