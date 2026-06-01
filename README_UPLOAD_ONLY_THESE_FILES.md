@@ -1,1 +1,1 @@
-Upload the extracted contents of this folder to the GitHub Pages repository root: index.html, dashboard.html, .nojekyll, and this README. Delete older files first. v10.1 fixes the missing map initialization caused by a broken 3D button handler and adds a visible Cesium error fallback if ion/CDN layers fail.
+Upload only index.html, dashboard.html, .nojekyll, and this README to the GitHub repo root. Delete older package files first. v10.2 increases the map canvas height, cleans up Cesium beacons, improves camera behavior, and preserves the v9 market-intelligence tables.
