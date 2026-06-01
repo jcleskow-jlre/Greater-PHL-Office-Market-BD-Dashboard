@@ -1,9 +1,10 @@
-# Greater Philadelphia Office CBD Dashboard v11.1 map/photo fix
+# Greater Philadelphia Office CBD Dashboard v11.2
 
-Upload only the extracted files in this folder to the GitHub repository root:
+Upload only these extracted files to the GitHub repo root:
+
 - index.html
 - dashboard.html
 - .nojekyll
 - README_UPLOAD_ONLY_THESE_FILES.md
 
-Delete older dashboard files before uploading.
+Delete prior dashboard files before uploading this version.
