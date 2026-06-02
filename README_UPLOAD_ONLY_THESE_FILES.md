@@ -1,6 +1,1 @@
-Upload these files to GitHub Pages root:
-
-- index.html
-- dashboard.html
-- .nojekyll
-- README_UPLOAD_ONLY_THESE_FILES.md
+Upload these 4 files to GitHub root. Do not upload other files.
