@@ -21,3 +21,10 @@ v14.11 click lock
 - index.html and dashboard.html are intentionally identical to prevent GitHub Pages from loading a stale/non-click version.
 - Building click selection uses Cesium entity pick, tile metadata pick, pickPosition, globe ray, and screen-space fallback.
 - openBuildingModal also updates the right-side building profile panel.
+
+
+v14.12 click hotspot lock
+- Adds a DOM hotspot layer over the Cesium canvas so building selection no longer depends only on Cesium tile/entity picking.
+- Hotspots are generated from the Savills inventory and update every Cesium render frame.
+- index.html and dashboard.html remain identical.
+- Do not remove mapHotspots, buildDomHotspots, updateDomHotspots, or the postRender listener in future edits.
