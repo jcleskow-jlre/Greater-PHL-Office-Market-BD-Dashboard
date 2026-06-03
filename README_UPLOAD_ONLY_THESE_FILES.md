@@ -15,3 +15,9 @@ v14.10 regression guard checklist
 - Stack segments must show lease expiration labels on the visible block and selected-suite detail.
 - 1700 Market stack must use the OM stacking plan / rent roll source, not CoStar tenant snippets.
 - Map click/profile selection must remain wired after stack or data edits.
+
+
+v14.11 click lock
+- index.html and dashboard.html are intentionally identical to prevent GitHub Pages from loading a stale/non-click version.
+- Building click selection uses Cesium entity pick, tile metadata pick, pickPosition, globe ray, and screen-space fallback.
+- openBuildingModal also updates the right-side building profile panel.
