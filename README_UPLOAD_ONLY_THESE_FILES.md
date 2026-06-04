@@ -34,3 +34,11 @@ v14.13 click function restore
 - Restores missing selectBuildingFromMap(), which was causing Cesium map clicks to fail.
 - Adds installMapContainerClickFallback() so clicking the map canvas can still select the nearest inventory building if Cesium picking misses.
 - Keeps index.html and dashboard.html identical.
+
+
+v14.14 map click resolver
+- Visible DOM hotspot/circle layer is disabled.
+- Building selection uses a clean canvas pointerup resolver that projects visible Savills inventory buildings into screen space and selects the closest one.
+- Cesium LEFT_CLICK remains as backup.
+- Search + Enter selects the first filtered building.
+- index.html and dashboard.html are identical.
