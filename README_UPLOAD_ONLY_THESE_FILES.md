@@ -28,3 +28,9 @@ v14.12 click hotspot lock
 - Hotspots are generated from the Savills inventory and update every Cesium render frame.
 - index.html and dashboard.html remain identical.
 - Do not remove mapHotspots, buildDomHotspots, updateDomHotspots, or the postRender listener in future edits.
+
+
+v14.13 click function restore
+- Restores missing selectBuildingFromMap(), which was causing Cesium map clicks to fail.
+- Adds installMapContainerClickFallback() so clicking the map canvas can still select the nearest inventory building if Cesium picking misses.
+- Keeps index.html and dashboard.html identical.
